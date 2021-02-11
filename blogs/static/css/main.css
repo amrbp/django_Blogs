@@ -1,0 +1,15 @@
+.hero {
+  background-color: #ffffff;
+}
+
+.hero .blog {
+  padding-top: 50px;
+}
+
+.hero .blog .title {
+  width: 600px;
+}
+
+.hero .about {
+  padding-top: 50px;
+}

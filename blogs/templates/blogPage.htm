@@ -1,0 +1,15 @@
+{% extends 'navbar.htm' %} {% load static %} {% block content %}
+<link href="{% static 'css/contact.css'%}" rel="stylesheet" />
+<div class="container">
+  {% for result in data %}
+  <div class="contact">
+    <div class="h3 mb-4">{{result.name}}</div>
+    <div class="indent">
+      <div class="h6 mb-3">{{result.title}}</div>
+      <div class="h6 mb-3">{{result.description}}</div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

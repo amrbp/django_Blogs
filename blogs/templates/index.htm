@@ -1,0 +1,56 @@
+{% extends 'navbar.htm' %} {% load static %} {% block content %}
+<link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet" />
+<link href="{% static 'css/main.css'%}" rel="stylesheet" />
+
+<div class="hero">
+  <div class="row">
+    <div class="col-lg-8 col-sm-12">
+      <div class="container">
+        {% for post in object_list %}
+        <div class="blog">
+          <div class="card p-4">
+            <div class="title h1">{{post.title}}</div>
+            <div class="author">
+              <p>author : {{post.username}}</p>
+            </div>
+            {% if post.image != None %}
+            <img src="{{post.image.url}}" width="100%" class="mb-4" />
+            {% endif %}
+            <div class="content">
+              <p>{{post.content}}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+      <div class="container">
+        <div class="about">
+          <div class="h4 mb-4">Welcome to Bloger</div>
+          <div class="description mb-4">
+            <p>
+              We are an online design magazine for anything creative. We have a
+              goal of expanding the community of design eccentric individuals
+              from all over the world by inspiring them through articles,
+              resources, tutorials and inspiration.
+            </p>
+          </div>
+          <form class="form-inline">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
